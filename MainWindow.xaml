@@ -1,0 +1,33 @@
+﻿<Window x:Class="FolderBrowser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FolderBrowser"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Label x:Name="MainLabel" Content="Folder Browser" HorizontalAlignment="Center" Margin="0,9,0,0" VerticalAlignment="Top" FontSize="35" FontWeight="Bold"/>
+        <Label x:Name="FolderNameLabel" Content="Folder Name" HorizontalAlignment="Left" Margin="75,72,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.502,1.039" Width="149"/>
+        <TextBox x:Name="DirectoryTextbox" HorizontalAlignment="Left" Margin="264,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="462" FontSize="20"/>
+        <Button x:Name="BrowseFilesButton" Content="Browse Files..." HorizontalAlignment="Left" Margin="400,117,0,0" VerticalAlignment="Top" FontSize="20" Width="218" Click="browseFiles"/>
+        <ListView x:Name="FilesListView" 
+                  d:ItemsSource="{d:SampleData ItemCount=5}" 
+                  Margin="0,170,0,0"
+                  TextElement.FontSize="16">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Icon" Width="50" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding icon}"></Image>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Name" Width="300" DisplayMemberBinding="{Binding fileName}" />
+                    <GridViewColumn Header="Path" Width="450" DisplayMemberBinding="{Binding filePath}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
