@@ -9,9 +9,11 @@
     <Grid>
         <Label x:Name="MainLabel" Content="Folder Browser" HorizontalAlignment="Center" Margin="0,9,0,0" VerticalAlignment="Top" FontSize="35" FontWeight="Bold"/>
         <Label x:Name="FolderNameLabel" Content="Folder Name" HorizontalAlignment="Left" Margin="75,72,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.502,1.039" Width="149"/>
-        <TextBox x:Name="DirectoryTextbox" HorizontalAlignment="Left" Margin="264,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="462" FontSize="20"/>
-        <Button x:Name="BrowseFilesButton" Content="Browse Files..." HorizontalAlignment="Left" Margin="400,117,0,0" VerticalAlignment="Top" FontSize="20" Width="218" Click="browseFiles"/>
-        <ListView x:Name="FilesListView" 
+        <Grid>
+            <TextBox x:Name="DirectoryTextbox" HorizontalAlignment="Left" Margin="264,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="462" FontSize="20"/>
+        </Grid>
+        <Button x:Name="BrowseFilesButton" Content="Browse Files..." HorizontalAlignment="Left" Margin="264,117,0,0" VerticalAlignment="Top" FontSize="20" Width="151" Click="browseFiles" Foreground="White" Background="#FF007AC1"/>
+        <ListView x:Name="FileSystemEntryListView" 
                   d:ItemsSource="{d:SampleData ItemCount=5}" 
                   Margin="0,170,0,0"
                   TextElement.FontSize="16">
@@ -29,5 +31,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="DeleteFileButton" Content="Delete" HorizontalAlignment="Left" Margin="633,117,0,0" VerticalAlignment="Top" FontSize="20" Width="93" Click="deleteFile" Foreground="White" Background="#FFDA0808"/>
+        <Button x:Name="CreateFileButton" Content="Create " HorizontalAlignment="Left" Margin="435,117,0,0" VerticalAlignment="Top" FontSize="20" Width="94" Click="createFile" Foreground="White" Background="#FF08DA72"/>
+        <Button x:Name="RenameFileButton" Content="Rename" HorizontalAlignment="Left" Margin="534,117,0,0" VerticalAlignment="Top" FontSize="20" Width="94" Click="renameFile" Foreground="White" Background="#FF0DC8CE"/>
     </Grid>
 </Window>

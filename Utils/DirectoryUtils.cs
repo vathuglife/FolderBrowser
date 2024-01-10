@@ -15,13 +15,7 @@ namespace FolderBrowser.Utils
 {
     public class DirectoryUtils
     {
-        public static List<string> getFilesAndFolders(string path)
-        {
-            string[] files = getFiles(path);
-            string[] folders = getFolders(path);
-            List<string> result = files.Concat(folders).ToList();
-            return result;
-        }
+
         public static List<string> getFilesNames(List<string> files)
         {
             List<string> names = new List<string>();
@@ -45,14 +39,43 @@ namespace FolderBrowser.Utils
 
             return icons;
         }
-        private static string[] getFiles(string path)
+        public static string[] getFiles(string path)
         {
             return Directory.GetFiles(path);
         }
-        private static string[] getFolders(string path)
+        public static string[] getFolders(string path)
         {
             return Directory.GetDirectories(path);
         }
+        public static void createNewFile(string path)
+        {
+            File.Create(path);
+        }
+        public static void createNewFolder(string path)
+        {
+            Directory.CreateDirectory(path);
+        }
+        public static void deleteFile(string path)
+        {
+            File.Delete(path);
+        }
+        public static void deleteFolder(string path)
+        {
+            Directory.Delete(path, false);
+        }
+        public static void deleteFolderRecursively(string path)
+        {
+            Directory.Delete(path, true);
+        }
+        public static void renameFile(string oldPath,string newPath)
+        {
+            File.Move(oldPath, newPath);
+        }
+        public static void renameFolder(string oldPath, string newPath)
+        {
+            Directory.Move(oldPath, newPath);
+        }
+
     }
 
 }

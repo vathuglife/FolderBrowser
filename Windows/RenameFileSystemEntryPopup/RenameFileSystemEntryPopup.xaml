@@ -1,0 +1,16 @@
+﻿<Window x:Class="FolderBrowser.Windows.RenameFileSystemEntryPopup.RenameFileSystemEntryPopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FolderBrowser.Windows.RenameFileSystemEntryPopup"
+        mc:Ignorable="d"
+        Title="RenameFileSystemEntryPopup" Height="250" Width="400">
+    <Grid>
+        <Label Content="Rename" HorizontalAlignment="Left" Margin="35,25,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="39,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318" ScrollViewer.CanContentScroll="True"><Run Text="Enter a new name for the selected "/><Run Text="file/folder"/></TextBlock>
+        <TextBox x:Name="FileSystemEntryNewNameTextbox" HorizontalAlignment="Left" Margin="39,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318" Height="29"/>
+        <Button x:Name="RenameFileSystemEntryButton" Content="Rename" HorizontalAlignment="Left" Margin="289,146,0,0" VerticalAlignment="Top" Width="68" Foreground="White" Background="#FF0597D0" Click="RenameFileSystemEntry"/>
+
+    </Grid>
+</Window>
